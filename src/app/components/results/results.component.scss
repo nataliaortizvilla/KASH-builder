@@ -56,11 +56,20 @@
 
 .carousel-track {
   overflow: hidden;
+
+  @media (max-width: 991px) {
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
 }
 
 .carousel-inner {
   display: flex;
   transition: transform 0.3s ease;
+
+  @media (max-width: 991px) {
+    gap: 30px;
+  }
 }
 
 .result-card {
@@ -70,9 +79,13 @@
   border-radius: 16px;
   box-shadow: 0 0 10px #4275f0;
 
-  @media (min-width: 969px) {
+  @media (min-width: 992px) {
     min-width: calc(33.333% - 20px);
     margin: 0 10px;
+  }
+
+  @media (max-width: 991px) {
+    min-width: 280px;
   }
 
   @media (max-width: 768px) {
