@@ -1,17 +1,93 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+
+$font-family-base: "Montserrat", -apple-system, Roboto, Helvetica, sans-serif;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$radius-xs: 6px;
+$radius-sm: 8px;
+$radius-md: 16px;
+$radius-lg: 24px;
+$radius-pill: 50px;
+
+$shadow-soft: 0 0 7px rgba(0, 0, 0, 0.2);
+$shadow-strong: 0 12px 30px rgba(34, 13, 67, 0.25);
+
+$transition-base: 0.3s ease;
+
+$color-tokens: (
+  pink: #cd2bdb,
+  morado: #220d43,
+  blue: #497cf8,
+  neutral-0: #ffffff,
+  orange: #ff9200,
+  gris-parrafos: #7b7b7b,
+  purple-dark: #3c1a89,
+  light-purple: #805ad5,
+  light-blue: #7099ff,
+  background-light: #f9f9f9,
+  background-section: #e8eeff
+);
+
+$gradient-hero: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 55%),
+  radial-gradient(circle at 80% 0%, rgba(205, 43, 219, 0.25) 0%, transparent 60%),
+  linear-gradient(135deg, #3c1a89 0%, #220d43 40%, #130737 100%);
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button-reset {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+@mixin button-pill($bg, $color: #ffffff, $border: transparent) {
+  @include button-reset;
+  padding: 8px 20px;
+  border-radius: $radius-pill;
+  background: $bg;
+  border: 1px solid $border;
+  color: $color;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.5px;
+  transition: background-color $transition-base, border-color $transition-base, transform $transition-base;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-1px);
+  }
+}
+
 :root {
-  --pink: #cd2bdb;
-  --morado: #220d43;
-  --blue: #497cf8;
-  --neutral-0: #fff;
-  --orange: #ff9200;
-  --gris-parrafos: #7b7b7b;
-  --purple-dark: #3c1a89;
-  --light-purple: #805ad5;
-  --light-blue: #7099ff;
-  --background-light: #f9f9f9;
-  --background-section: #e8eeff;
+  @each $token, $value in $color-tokens {
+    --#{$token}: #{$value};
+  }
+
+  --color-primary: #{map-get($color-tokens, morado)};
+  --color-primary-contrast: #{map-get($color-tokens, neutral-0)};
+  --color-accent: #{map-get($color-tokens, pink)};
+  --color-secondary: #{map-get($color-tokens, blue)};
+  --color-muted: #{map-get($color-tokens, gris-parrafos)};
+  --gradient-hero: #{$gradient-hero};
+  --shadow-soft: #{$shadow-soft};
+  --shadow-strong: #{$shadow-strong};
+  --radius-xs: #{$radius-xs};
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-pill: #{$radius-pill};
+  --transition-base: #{$transition-base};
 }
 
 * {
@@ -21,15 +97,12 @@
 }
 
 body {
-  font-family:
-    "Montserrat",
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: $font-family-base;
+  font-weight: $font-weight-regular;
   background-color: var(--background-light);
-  color: var(--morado);
+  color: var(--color-primary);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -43,4 +116,34 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+}
+
+.button-primary {
+  @include button-pill(map-get($color-tokens, pink), #ffffff, map-get($color-tokens, pink));
+
+  &:hover,
+  &:focus-visible {
+    background: darken(map-get($color-tokens, pink), 5%);
+    border-color: darken(map-get($color-tokens, pink), 5%);
+  }
+}
+
+.button-outline {
+  @include button-pill(transparent, #ffffff, rgba(255, 255, 255, 0.7));
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 1);
+  }
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+.surface-card {
+  background: var(--neutral-0);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
 }
