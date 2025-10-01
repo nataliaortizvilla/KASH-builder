@@ -1,0 +1,129 @@
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 613px;
+  padding: 60px 80px 0;
+  background: url("https://api.builder.io/api/v1/image/assets/TEMP/adeeda46c838a66cff432db856cf4c2a7c12aba2?width=2880")
+    lightgray 50% / cover no-repeat;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+
+  @media (max-width: 968px) {
+    padding: 80px 40px 40px;
+    flex-direction: column;
+    gap: 32px;
+    min-height: auto;
+  }
+
+  @media (max-width: 768px) {
+    padding: 100px 24px 32px;
+  }
+}
+
+.decoration-ball {
+  position: absolute;
+
+  &-top {
+    width: 105px;
+    height: auto;
+    transform: rotate(-22.832deg);
+    top: 80px;
+    right: 50px;
+
+    @media (max-width: 768px) {
+      width: 70px;
+      top: 120px;
+      right: 20px;
+    }
+  }
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  z-index: 1;
+
+  @media (max-width: 968px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+
+  @media (max-width: 968px) {
+    align-items: center;
+  }
+}
+
+.hero-subtitle {
+  color: var(--pink);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: normal;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+.hero-title {
+  color: white;
+  font-size: 60px;
+  font-weight: 800;
+  line-height: normal;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
+
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
+}
+
+.btn-play {
+  padding: 8px 20px;
+  border-radius: 50px;
+  border: 1px solid white;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.hero-logo {
+  img {
+    width: 253px;
+    height: auto;
+
+    @media (max-width: 768px) {
+      width: 200px;
+    }
+  }
+}
+
+.hero-partner {
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 160px;
+    height: 31px;
+
+    @media (max-width: 968px) {
+      width: 120px;
+      height: auto;
+    }
+  }
+}

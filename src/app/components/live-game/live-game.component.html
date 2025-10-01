@@ -1,0 +1,84 @@
+<section class="live-game">
+  <div class="game-video">
+    <div class="video-container">
+      <img
+        src="https://api.builder.io/api/v1/image/assets/TEMP/021007a869f1fd083c4e66c3e5c6a18e2b6d052b?width=1184"
+        alt="Juego en vivo"
+      />
+      <div class="video-overlay"></div>
+      <button class="play-button">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+          <g filter="url(#filter0_d_170_559)">
+            <circle cx="26" cy="25" r="20" fill="white" />
+          </g>
+          <path
+            d="M20.5457 31.0995V17.9915C20.5457 16.362 22.3898 15.4164 23.7129 16.3674L32.8316 22.9215C33.9419 23.7195 33.9419 25.3715 32.8316 26.1695L23.7129 32.7236C22.3898 33.6746 20.5457 32.729 20.5457 31.0995Z"
+            fill="#130737"
+          />
+          <defs>
+            <filter
+              id="filter0_d_170_559"
+              x="0"
+              y="0"
+              width="52"
+              height="52"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="1" />
+              <feGaussianBlur stdDeviation="3" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_170_559"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect1_dropShadow_170_559"
+                result="shape"
+              />
+            </filter>
+          </defs>
+        </svg>
+      </button>
+    </div>
+    <div class="countdown">
+      <span>Próxima jugada en: </span>
+      <strong>03 min 10 seg</strong>
+    </div>
+  </div>
+
+  <div class="game-info">
+    <div class="info-text">
+      <h2>¡Mira el juego en vivo!</h2>
+      <p>
+        Sigue la transmisión en vivo de KASH en Twitch y no te pierdas ningún
+        detalle del sorteo cada 5 minutos. Más abajo encontrarás la explicación
+        del tablero de juego para que sepas cómo interpretar los números.
+      </p>
+      <button class="btn-watch">Ver transmisión</button>
+    </div>
+
+    <div class="stats-grid">
+      <div *ngFor="let stat of stats" class="stat-card">
+        <div class="stat-icon" [style.background]="stat.color">
+          <span *ngIf="stat.number">{{ stat.number }}</span>
+        </div>
+        <p>{{ stat.label }}</p>
+      </div>
+    </div>
+  </div>
+</section>

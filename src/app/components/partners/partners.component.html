@@ -1,0 +1,34 @@
+<section class="partners">
+  <img
+    class="decoration-ball"
+    src="https://api.builder.io/api/v1/image/assets/TEMP/8225727e59bc8b047a4d00825c2651e5875f65f6?width=365"
+    alt=""
+  />
+
+  <div class="partners-header">
+    <h2>Aqui puedes comprar tu KASH</h2>
+    <p>Nuestras redes comerciales</p>
+  </div>
+
+  <div class="partners-carousel">
+    <div class="carousel-track">
+      <div
+        class="carousel-inner"
+        [style.transform]="'translateX(-' + currentSlide * 100 + '%)'"
+      >
+        <div *ngFor="let partner of partners" class="partner-card">
+          <img [src]="partner" alt="Partner logo" />
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-dots">
+      <button
+        *ngFor="let partner of partners; let i = index"
+        [class.active]="i === currentSlide"
+        (click)="goToSlide(i)"
+        class="dot"
+      ></button>
+    </div>
+  </div>
+</section>

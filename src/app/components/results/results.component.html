@@ -1,0 +1,73 @@
+<section class="results">
+  <div class="results-container">
+    <h2 class="results-title">Últimos resultados</h2>
+
+    <div class="carousel">
+      <button class="carousel-btn carousel-btn-prev" (click)="prevSlide()">
+        <svg width="27" height="27" viewBox="0 0 27 27" fill="none">
+          <rect width="27" height="27" rx="13.5" fill="#220D43" />
+          <path
+            d="M16 8.5L11 13.5L16 18.5"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+
+      <div class="carousel-track">
+        <div
+          class="carousel-inner"
+          [style.transform]="'translateX(-' + currentSlide * 100 + '%)'"
+        >
+          <div *ngFor="let result of results" class="result-card">
+            <div class="result-header">
+              <span>Jugada {{ result.gameId }}</span>
+            </div>
+
+            <div class="numbers-grid">
+              <app-number-ball
+                *ngFor="let number of result.numbers"
+                [number]="number"
+              ></app-number-ball>
+            </div>
+
+            <div class="result-footer">
+              <span>Fecha: {{ result.date }}</span>
+              <span>Hora: {{ result.time }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-btn carousel-btn-next" (click)="nextSlide()">
+        <svg width="27" height="27" viewBox="0 0 27 27" fill="none">
+          <rect
+            x="27"
+            y="27"
+            width="27"
+            height="27"
+            rx="13.5"
+            transform="rotate(-180 27 27)"
+            fill="#220D43"
+          />
+          <path
+            d="M11 18.5L16 13.5L11 8.5"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div class="carousel-dots">
+      <button
+        *ngFor="let result of results; let i = index"
+        [class.active]="i === currentSlide"
+        (click)="goToSlide(i)"
+        class="dot"
+      ></button>
+    </div>
+  </div>
+</section>

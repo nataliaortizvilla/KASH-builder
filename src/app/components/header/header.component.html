@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="header-container">
+    <div class="logo">
+      <img src="https://api.builder.io/api/v1/image/assets/TEMP/b2c31c4d16c75d0ae32eb4bd698db082225b9e47?width=214"
+        alt="KASH Logo" />
+    </div>
+
+    <nav class="nav">
+      <a *ngFor="let item of menuItems" [routerLink]="item.path" [class.active]="item.active" class="nav-link">
+        {{ item.label }}
+      </a>
+    </nav>
+
+    <div class="actions">
+      <button class="btn btn-outline">Iniciar sesión</button>
+      <button class="btn btn-primary">Jugar Kash</button>
+    </div>
+  </div>
+</header>

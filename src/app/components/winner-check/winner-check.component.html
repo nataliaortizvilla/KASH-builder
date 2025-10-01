@@ -1,0 +1,28 @@
+<section class="winner-check">
+  <div class="winner-check-header">
+    <h2>Consulta si tu KASH fue el ganador</h2>
+  </div>
+
+  <div class="winner-check-content">
+    <h3>¿Quieres saber si ganaste?</h3>
+    <p>Ingresa la información que encuentras en tu tirilla:</p>
+
+    <div class="form-container">
+      <div class="form-row">
+        <div class="form-field">
+          <label>ID Kash</label>
+          <input type="text" [(ngModel)]="idKash" placeholder="0000" />
+        </div>
+
+        <div class="form-field">
+          <label>#GNA</label>
+          <input type="text" [(ngModel)]="gna" placeholder="0000" />
+        </div>
+      </div>
+
+      <button class="btn-submit" (click)="checkWinner()">
+        Consultar Kash Ganador
+      </button>
+    </div>
+  </div>
+</section>

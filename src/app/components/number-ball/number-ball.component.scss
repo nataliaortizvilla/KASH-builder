@@ -1,0 +1,18 @@
+.number-ball {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  background: var(--light-blue);
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+
+  @media (max-width: 768px) {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+}

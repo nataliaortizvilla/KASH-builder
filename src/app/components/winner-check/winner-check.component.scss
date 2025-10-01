@@ -1,0 +1,138 @@
+.winner-check {
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  @media (max-width: 968px) {
+    padding: 40px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 32px 24px;
+  }
+}
+
+.winner-check-header {
+  padding: 8px 10px;
+  background: var(--morado);
+  border-radius: 8px;
+
+  h2 {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.winner-check-content {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  h3 {
+    color: var(--morado);
+    font-size: 20px;
+    font-weight: 600;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+
+  p {
+    color: black;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 16px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.form-container {
+  width: 100%;
+  max-width: 737px;
+  padding: 30px;
+  background: white;
+  border: 1px solid #ce9eea;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+}
+
+.form-row {
+  display: flex;
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.form-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  label {
+    color: #71597e;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  input {
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #6f6f6f;
+    border-radius: 6px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    &::placeholder {
+      color: #bbb;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--pink);
+    }
+  }
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 8px 20px;
+  background: var(--pink);
+  border: 1px solid var(--pink);
+  border-radius: 50px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #b525c0;
+    border-color: #b525c0;
+  }
+}

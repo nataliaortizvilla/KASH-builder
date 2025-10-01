@@ -1,0 +1,150 @@
+.results {
+  display: flex;
+  justify-content: center;
+  padding: 24px 80px;
+  background: var(--background-light);
+  margin-top: -80px;
+  position: relative;
+
+  @media (max-width: 968px) {
+    padding: 24px 40px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 24px 24px;
+  }
+}
+
+.results-container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 24px;
+  background: var(--background-section);
+  border-radius: 16px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+}
+
+.results-title {
+  color: var(--morado);
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 12px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+.carousel {
+  position: relative;
+  padding: 10px 0;
+}
+
+.carousel-track {
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.result-card {
+  min-width: 100%;
+  padding: 16px;
+  background: var(--blue);
+  border-radius: 16px;
+  box-shadow: 0 0 10px #4275f0;
+
+  @media (min-width: 768px) {
+    min-width: calc(33.333% - 20px);
+    margin: 0 10px;
+  }
+}
+
+.result-header {
+  padding: 8px 0;
+  background: #3d6ee6;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 7px;
+  margin-bottom: 16px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+}
+
+.result-footer {
+  display: flex;
+  justify-content: space-between;
+  color: #dde7ff;
+  font-size: 12px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  svg {
+    display: block;
+  }
+
+  &-prev {
+    left: -14px;
+
+    @media (max-width: 768px) {
+      left: -10px;
+    }
+  }
+
+  &-next {
+    right: -14px;
+
+    @media (max-width: 768px) {
+      right: -10px;
+    }
+  }
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #bfcdef;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &.active {
+    background: var(--morado);
+  }
+}
