@@ -1,18 +1,12 @@
 <header class="header">
   <div class="header-container">
     <div class="logo">
-      <img
-        src="https://api.builder.io/api/v1/image/assets/TEMP/b2c31c4d16c75d0ae32eb4bd698db082225b9e47?width=214"
-        alt="KASH Logo"
-      />
+      <img src="https://api.builder.io/api/v1/image/assets/TEMP/b2c31c4d16c75d0ae32eb4bd698db082225b9e47?width=214"
+        alt="KASH Logo" />
     </div>
 
     <nav class="nav">
-      <a
-        *ngFor="let item of menuItems"
-        [class.active]="item.active"
-        class="nav-link"
-      >
+      <a *ngFor="let item of menuItems" [routerLink]="item.path" [class.active]="item.active" class="nav-link">
         {{ item.label }}
       </a>
     </nav>
