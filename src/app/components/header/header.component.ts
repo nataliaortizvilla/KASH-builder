@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, HostListener } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Router } from "@angular/router";
 
@@ -10,6 +10,13 @@ import { RouterModule, Router } from "@angular/router";
   styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent {
+  scrolled = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.scrolled = window.scrollY > 100; // si scrolleas más de 50px
+  }
+
   menuItems = [
     { label: "Inicio", path: "/", active: true },
     { label: "Conoce Kash", path: "/conoce-kash", active: false },
