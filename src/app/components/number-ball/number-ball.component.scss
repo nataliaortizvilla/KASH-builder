@@ -10,9 +10,15 @@
   font-size: 12px;
   font-weight: 400;
 
+  @media (max-width: 968px) {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
   @media (max-width: 768px) {
-    width: 35px;
-    height: 35px;
+    width: 36px;
+    height: 36px;
     font-size: 14px;
   }
 }
