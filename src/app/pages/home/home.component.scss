@@ -2,4 +2,40 @@
   width: 100%;
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
+}
+
+.decoration-ball {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+
+  &.ball-top-right {
+    width: 105px;
+    height: auto;
+    top: 899px;
+    right: -51px;
+    transform: rotate(-22.832deg);
+
+    @media (max-width: 768px) {
+      width: 105px;
+      top: 899px;
+      right: -51px;
+    }
+  }
+
+  &.ball-bottom-left {
+    width: 103px;
+    height: auto;
+    bottom: 1413px;
+    left: -62px;
+    transform: rotate(16.678deg);
+
+    @media (max-width: 768px) {
+      width: 103px;
+      bottom: auto;
+      top: 1413px;
+      left: -62px;
+    }
+  }
 }
