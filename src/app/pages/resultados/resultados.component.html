@@ -1,1 +1,153 @@
-<p>resultados works!</p>
+<div class="resultados">
+  <app-header></app-header>
+
+  <section class="hero-section">
+    <h1 class="hero-title">Resultados</h1>
+  </section>
+
+  <section class="results-content">
+    <div class="search-container">
+      <div class="search-header">
+        <h2 class="search-title">Últimos resultados</h2>
+        <p class="search-description">
+          Consulta los resultados más recientes o busca por fecha o jugada para ver si tus números fueron los afortunados.
+        </p>
+      </div>
+
+      <div class="search-form">
+        <div class="search-inputs">
+          <div class="input-group">
+            <label for="search-date">Búsqueda por fecha</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="search-date"
+                [(ngModel)]="searchDate"
+                placeholder="30-07-2025"
+                class="form-input"
+              />
+              <svg class="calendar-icon" width="19" height="20" viewBox="0 0 19 20" fill="none">
+                <g clip-path="url(#clip0_1559_2321)">
+                  <path
+                    d="M15.042 2.0971H14.25V1.3061C14.2427 1.10105 14.1561 0.906831 14.0085 0.764348C13.8609 0.621865 13.6637 0.542238 13.4585 0.542238C13.2533 0.542238 13.0561 0.621865 12.9085 0.764348C12.7609 0.906831 12.6743 1.10105 12.667 1.3061V2.0981H6.333V1.3061C6.33678 1.19979 6.3191 1.09381 6.28103 0.994483C6.24295 0.895155 6.18526 0.804515 6.11139 0.727972C6.03752 0.651428 5.94899 0.59055 5.85107 0.548971C5.75316 0.507391 5.64788 0.485962 5.5415 0.485962C5.43512 0.485962 5.32984 0.507391 5.23193 0.548971C5.13401 0.59055 5.04548 0.651428 4.97161 0.727972C4.89774 0.804515 4.84005 0.895155 4.80197 0.994483C4.7639 1.09381 4.74622 1.19979 4.75 1.3061V2.0981H3.958C2.90868 2.09942 1.90271 2.51685 1.16073 3.25883C0.41875 4.00082 0.00132306 5.00678 0 6.0561L0 15.5561C0.00132306 16.6054 0.41875 17.6114 1.16073 18.3534C1.90271 19.0953 2.90868 19.5128 3.958 19.5141H15.042C16.0913 19.5128 17.0973 19.0953 17.8393 18.3534C18.5812 17.6114 18.9987 16.6054 19 15.5561V6.0561C18.9989 5.00661 18.5816 4.00039 17.8396 3.25819C17.0976 2.51599 16.0915 2.09842 15.042 2.0971ZM3.958 3.6811H15.042C15.6716 3.68189 16.2753 3.93237 16.7205 4.3776C17.1657 4.82283 17.4162 5.42645 17.417 6.0561V6.8481H1.583V6.0561C1.58379 5.42645 1.83427 4.82283 2.2795 4.3776C2.72473 3.93237 3.32835 3.68189 3.958 3.6811ZM15.041 17.9311H3.958C3.32835 17.9303 2.72473 17.6798 2.2795 17.2346C1.83427 16.7894 1.58379 16.1857 1.583 15.5561V8.4311H17.417V15.5561C17.4162 16.1857 17.1657 16.7894 16.7205 17.2346C16.2753 17.6798 15.6706 17.9303 15.041 17.9311ZM12.666 13.1811C12.666 13.3912 12.5826 13.5926 12.434 13.7411C12.2855 13.8897 12.0841 13.9731 11.874 13.9731H7.125C7.01869 13.9769 6.91271 13.9592 6.81338 13.9211C6.71406 13.8831 6.62341 13.8254 6.54687 13.7515C6.47033 13.6776 6.40945 13.5891 6.36787 13.4912C6.32629 13.3933 6.30486 13.288 6.30486 13.1816C6.30486 13.0752 6.32629 12.9699 6.36787 12.872C6.40945 12.7741 6.47033 12.6856 6.54687 12.6117C6.62341 12.5378 6.71406 12.4801 6.81338 12.4421C6.91271 12.404 7.01869 12.3863 7.125 12.3901H11.875C12.0849 12.3901 12.2862 12.4734 12.4347 12.6217C12.5832 12.77 12.6657 12.9712 12.666 13.1811Z"
+                    fill="#220D43"
+                  />
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="input-group">
+            <label for="search-game">Búsqueda por jugada</label>
+            <input
+              type="text"
+              id="search-game"
+              [(ngModel)]="searchGame"
+              placeholder="N° de jugada"
+              class="form-input"
+            />
+          </div>
+        </div>
+
+        <button class="btn-search">Buscar</button>
+      </div>
+
+      <div class="results-grid">
+        <div *ngFor="let result of displayedResults" class="result-card">
+          <div class="card-header">
+            <span class="game-number">Jugada {{ result.gameNumber }}</span>
+          </div>
+
+          <div class="numbers-grid">
+            <div *ngFor="let number of result.numbers" class="number-ball">
+              {{ number }}
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <span class="card-date">Fecha: {{ result.date }}</span>
+            <span class="card-time">Hora: {{ result.time }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <button class="pagination-arrow" (click)="previousPage()" [disabled]="currentPage === 1">
+          <svg width="27" height="28" viewBox="0 0 27 28" fill="none">
+            <path d="M16 9L11 14L16 19" stroke="#47516E" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+
+        <button
+          *ngFor="let page of pages"
+          class="pagination-number"
+          [class.active]="page === currentPage"
+          (click)="goToPage(page)"
+        >
+          {{ page }}
+        </button>
+
+        <button
+          class="pagination-arrow"
+          (click)="nextPage()"
+          [disabled]="currentPage === totalPages"
+        >
+          <svg width="27" height="28" viewBox="0 0 27 28" fill="none">
+            <path d="M11 9L16 14L11 19" stroke="#47516E" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <img
+    src="https://api.builder.io/api/v1/image/assets/TEMP/8d46dda1144708b6d43247ddf0c48356163183bd?width=211"
+    alt="Bolas de lotería"
+    class="floating-ball-left"
+  />
+
+  <section class="winner-check-section">
+    <div class="winner-header">
+      <h2 class="winner-title">Consulta si tu KASH fue el ganador</h2>
+    </div>
+
+    <div class="winner-content">
+      <p class="winner-question">¿Quieres saber si ganaste?</p>
+      <p class="winner-instructions">Ingresa la información que encuentras en tu tirilla:</p>
+    </div>
+
+    <div class="winner-form">
+      <div class="form-card">
+        <div class="form-inputs">
+          <div class="input-group">
+            <label for="id-kash">ID Kash</label>
+            <input
+              type="text"
+              id="id-kash"
+              [(ngModel)]="idKash"
+              placeholder="0000"
+              class="form-input"
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="gna">#GNA</label>
+            <input type="text" id="gna" [(ngModel)]="gna" placeholder="0000" class="form-input" />
+          </div>
+        </div>
+
+        <button class="btn-check-winner">Consultar Kash Ganador</button>
+      </div>
+    </div>
+  </section>
+
+  <img
+    src="https://api.builder.io/api/v1/image/assets/TEMP/d7b2b13d1b688d402fd8fe303a2525ea56640267?width=306"
+    alt="Bolas de lotería"
+    class="floating-ball-right"
+  />
+
+  <app-footer></app-footer>
+</div>
