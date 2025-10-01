@@ -12,8 +12,8 @@
   }
 
   @media (max-width: 768px) {
-    padding: 40px 24px;
-    gap: 32px;
+    padding: 60px 40px;
+    gap: 40px;
   }
 }
 
@@ -150,7 +150,8 @@
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 }
 
@@ -163,11 +164,19 @@
   align-items: center;
   gap: 10px;
 
+  @media (max-width: 768px) {
+    padding: 10px 8px;
+  }
+
   p {
     color: var(--light-purple);
     font-size: 14px;
     font-weight: 700;
     text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
   }
 }
 
