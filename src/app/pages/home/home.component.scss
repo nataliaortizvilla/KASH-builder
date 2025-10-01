@@ -20,6 +20,13 @@
     @media (max-width: 991px) {
       display: none;
     }
+
+    @media (max-width: 768px) {
+      display: block;
+      width: 105px;
+      top: 899px;
+      right: -51px;
+    }
   }
 
   &.ball-bottom-left {
@@ -31,6 +38,14 @@
 
     @media (max-width: 991px) {
       display: none;
+    }
+
+    @media (max-width: 768px) {
+      display: block;
+      width: 104px;
+      top: 1413px;
+      left: -62px;
+      transform: rotate(16.678deg);
     }
   }
 }
