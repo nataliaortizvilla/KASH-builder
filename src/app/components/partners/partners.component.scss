@@ -61,6 +61,12 @@
   gap: 24px;
 }
 
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .carousel-track {
   overflow: hidden;
   background: var(--background-section);
