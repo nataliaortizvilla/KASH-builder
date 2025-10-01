@@ -6,7 +6,7 @@
   margin-top: -80px;
   position: relative;
 
-  @media (max-width: 968px) {
+  @media (max-width: 991px) {
     padding: 24px 40px;
   }
 
@@ -57,9 +57,13 @@
 .carousel-track {
   overflow: hidden;
 
-  @media (max-width: 991px) {
+  @media (max-width: 768px) {
     overflow-x: auto;
-    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
@@ -67,8 +71,8 @@
   display: flex;
   transition: transform 0.3s ease;
 
-  @media (max-width: 991px) {
-    gap: 30px;
+  @media (max-width: 768px) {
+    gap: 16px;
   }
 }
 
@@ -84,11 +88,8 @@
     margin: 0 10px;
   }
 
-  @media (max-width: 991px) {
-    min-width: 280px;
-  }
-
   @media (max-width: 768px) {
+    min-width: 295px;
     padding: 16px;
   }
 }
@@ -110,7 +111,7 @@
   gap: 7px;
   margin-bottom: 16px;
 
-  @media (max-width: 968px) {
+  @media (max-width: 991px) {
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
   }
@@ -119,6 +120,9 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     justify-items: center;
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
