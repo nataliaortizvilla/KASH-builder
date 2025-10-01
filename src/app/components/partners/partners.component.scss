@@ -19,22 +19,6 @@
   }
 }
 
-.decoration-ball {
-  position: absolute;
-  width: 183px;
-  height: auto;
-  transform: rotate(16.678deg);
-  left: -70px;
-  bottom: 200px;
-
-  @media (max-width: 968px) {
-    width: 120px;
-    left: -40px;
-    bottom: auto;
-    top: 20px;
-  }
-}
-
 .partners-header {
   display: flex;
   flex-direction: column;
