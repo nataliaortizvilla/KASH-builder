@@ -22,12 +22,22 @@
     flex-direction: column;
     gap: 40px;
   }
+
+  @media (max-width: 768px) {
+    align-items: center;
+    margin-bottom: 50px;
+  }
 }
 
 .footer-brand {
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    gap: 16px;
+  }
 
   img {
     width: 148px;
@@ -39,6 +49,10 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 
   p {
     color: rgba(255, 255, 255, 0.8);
@@ -78,7 +92,9 @@
   }
 
   @media (max-width: 768px) {
-    gap: 24px;
+    gap: 40px;
+    align-items: center;
+    width: 100%;
   }
 }
 
@@ -86,6 +102,10 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 
   h3 {
     color: rgba(255, 255, 255, 0.8);
