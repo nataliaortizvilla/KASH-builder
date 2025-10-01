@@ -3,15 +3,15 @@
   display: flex;
   min-height: 613px;
   padding: 60px 80px 0;
-  background: url("https://api.builder.io/api/v1/image/assets/TEMP/adeeda46c838a66cff432db856cf4c2a7c12aba2?width=2880")
-    lightgray 50% / cover no-repeat;
+  background: url("https://cdn.builder.io/api/v1/image/assets%2F10149a0e5af4403090a4d03ef8749e69%2F67a20a1aa94443a9b0a3f5343844d16d?format=webp&width=1600")
+    center / cover no-repeat;
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
 
   @media (max-width: 991px) {
     min-height: 777px;
-    background: url("https://cdn.builder.io/api/v1/image/assets%2F10149a0e5af4403090a4d03ef8749e69%2Ff1804e381c564d049b19097339590d28")
+    background: url("https://cdn.builder.io/api/v1/image/assets%2F10149a0e5af4403090a4d03ef8749e69%2F67a20a1aa94443a9b0a3f5343844d16d?format=webp&width=1200")
       center / cover no-repeat;
     padding: 260px 0 0 70px;
     flex-direction: column;
@@ -26,7 +26,7 @@
     gap: 0;
     align-items: center;
     justify-content: flex-start;
-    background: url("https://api.builder.io/api/v1/image/assets/TEMP/1321ef4908a275e6201d54026f6f660ac457017f?width=880")
+    background: url("https://cdn.builder.io/api/v1/image/assets%2F10149a0e5af4403090a4d03ef8749e69%2F67a20a1aa94443a9b0a3f5343844d16d?format=webp&width=800")
       center / cover no-repeat;
   }
 }
@@ -67,33 +67,33 @@
 
 .hero-subtitle {
   color: var(--pink);
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 700;
   line-height: normal;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
 
   @media (max-width: 991px) {
-    font-size: 25px;
+    font-size: 30px;
   }
 
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 
 .hero-title {
   color: white;
-  font-size: 60px;
+  font-size: 68px;
   font-weight: 800;
   line-height: normal;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
 
   @media (max-width: 991px) {
-    font-size: 40px;
+    font-size: 52px;
   }
 
   @media (max-width: 768px) {
-    font-size: 32px;
+    font-size: 44px;
   }
 }
 
