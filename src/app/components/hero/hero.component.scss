@@ -25,22 +25,6 @@
   }
 }
 
-.decoration-ball {
-  position: absolute;
-
-  &-top {
-    width: 105px;
-    height: auto;
-    transform: rotate(-22.832deg);
-    top: 80px;
-    right: 50px;
-
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-}
-
 .hero-content {
   display: flex;
   align-items: center;
