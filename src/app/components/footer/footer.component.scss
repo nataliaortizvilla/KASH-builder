@@ -54,17 +54,17 @@
 
 .social-icon {
   display: flex;
-  align-items: center;
+  width: 35px;
+  height: 35px;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
   transition: opacity 0.3s;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.90);
 
   &:hover {
     opacity: 0.8;
-  }
-
-  svg {
-    width: 35px;
-    height: auto;
   }
 }
 
