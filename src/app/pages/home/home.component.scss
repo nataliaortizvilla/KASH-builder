@@ -13,29 +13,38 @@
   &.ball-top-right {
     width: 105px;
     height: auto;
-    top: 899px;
-    right: -51px;
+    top: 960px;
+    right: -20px;
     transform: rotate(-22.832deg);
 
+    @media (max-width: 1024px) {
+      top: 980px;
+      right: -10px;
+    }
+
     @media (max-width: 768px) {
-      width: 105px;
-      top: 899px;
-      right: -51px;
+      width: 95px;
+      top: 1020px;
+      right: -6px;
     }
   }
 
   &.ball-bottom-left {
-    width: 103px;
+    width: 183px;
     height: auto;
-    bottom: 1413px;
-    left: -62px;
+    top: 1190px;
+    left: -30px;
     transform: rotate(16.678deg);
 
+    @media (max-width: 1024px) {
+      top: 1220px;
+      left: -20px;
+    }
+
     @media (max-width: 768px) {
-      width: 103px;
-      bottom: auto;
-      top: 1413px;
-      left: -62px;
+      width: 140px;
+      top: 1280px;
+      left: -12px;
     }
   }
 }
