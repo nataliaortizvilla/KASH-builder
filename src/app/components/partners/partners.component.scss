@@ -145,3 +145,48 @@
     background: var(--morado);
   }
 }
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  svg {
+    display: block;
+    width: 27px;
+    height: 27px;
+  }
+
+  &-prev {
+    left: 22px;
+
+    @media (max-width: 991px) {
+      left: -14px;
+    }
+
+    @media (max-width: 768px) {
+      left: 22px;
+    }
+  }
+
+  &-next {
+    right: -14px;
+
+    @media (max-width: 991px) {
+      right: -14px;
+    }
+
+    @media (max-width: 768px) {
+      right: 22px;
+    }
+  }
+}
