@@ -11,40 +11,26 @@
   pointer-events: none;
 
   &.ball-top-right {
-    width: 105px;
+    width: 95px;
     height: auto;
-    top: 960px;
-    right: -25px;
+    top: 1020px;
+    right: -8px;
     transform: rotate(-22.832deg);
 
-    @media (max-width: 1024px) {
-      top: 980px;
-      right: -15px;
-    }
-
-    @media (max-width: 768px) {
-      width: 95px;
-      top: 1020px;
-      right: -8px;
+    @media (max-width: 991px) {
+      display: none;
     }
   }
 
   &.ball-bottom-left {
-    width: 183px;
+    width: 140px;
     height: auto;
-    top: 1190px;
-    left: -30px;
+    top: 1280px;
+    left: -12px;
     transform: rotate(16.678deg);
 
-    @media (max-width: 1024px) {
-      top: 1220px;
-      left: -20px;
-    }
-
-    @media (max-width: 768px) {
-      width: 140px;
-      top: 1280px;
-      left: -12px;
+    @media (max-width: 991px) {
+      display: none;
     }
   }
 }
