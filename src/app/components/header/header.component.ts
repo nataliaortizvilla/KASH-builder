@@ -1,16 +1,18 @@
 import { Component, HostListener } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Router } from "@angular/router";
+import { SidebarComponent } from "../sidebar/sidebar.component";
 
 @Component({
   selector: "app-header",
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, SidebarComponent],
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent {
   scrolled = false;
+  sidebarOpen = false;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -30,5 +32,13 @@ export class HeaderComponent {
         item.active = this.router.url === item.path;
       });
     });
+  }
+
+  toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
+
+  closeSidebar() {
+    this.sidebarOpen = false;
   }
 }

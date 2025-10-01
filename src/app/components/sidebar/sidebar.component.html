@@ -1,0 +1,23 @@
+<div class="sidebar-overlay" [class.open]="isOpen" (click)="onBackdropClick()">
+  <div class="sidebar" [class.open]="isOpen" (click)="onSidebarClick($event)">
+    <div class="sidebar-content">
+      <div class="sidebar-header">
+        <img src="https://api.builder.io/api/v1/image/assets/TEMP/62cf45baa3864160b393a7378c43fcc469f0654c?width=298"
+          alt="Kash Logo" class="sidebar-logo" />
+      </div>
+
+      <nav class="sidebar-nav">
+        <a *ngFor="let item of menuItems" 
+           [routerLink]="item.path" 
+           class="sidebar-nav-item"
+           (click)="onMenuItemClick()">
+          {{ item.label }}
+        </a>
+      </nav>
+    </div>
+
+    <button class="sidebar-button" (click)="onMenuItemClick()">
+      Iniciar Sesión
+    </button>
+  </div>
+</div>

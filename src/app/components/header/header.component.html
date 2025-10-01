@@ -1,6 +1,8 @@
+<app-sidebar [isOpen]="sidebarOpen" (close)="closeSidebar()"></app-sidebar>
+
 <header class="header">
   <div class="header-container" [class.scrolled]="scrolled">
-    <div class="hamburger-menu">
+    <div class="hamburger-menu" (click)="toggleSidebar()">
       <span></span>
       <span></span>
       <span></span>
