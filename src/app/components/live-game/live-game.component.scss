@@ -183,6 +183,10 @@
     width: 170px;
   }
 
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+
   p {
     color: var(--light-purple);
     font-size: 14px;
