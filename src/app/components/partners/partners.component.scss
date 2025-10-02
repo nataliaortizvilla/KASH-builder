@@ -81,22 +81,6 @@
   }
 }
 
-.carousel-inner {
-  display: flex;
-  transition: transform 0.3s ease;
-  gap: 37px;
-
-  @media (max-width: 768px) {
-    gap: 13px;
-  }
-
-  @media (max-width: 640px) {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
 .partner-card {
   min-width: calc(25% - 28px);
   background: white;
