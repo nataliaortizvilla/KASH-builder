@@ -240,11 +240,12 @@
 }
 
 .numbers-grid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 6px;
   width: 100%;
   min-height: 65px;
+  justify-content: center;
 }
 
 .number-ball {
