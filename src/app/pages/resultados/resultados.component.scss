@@ -337,6 +337,16 @@
     width: 80px;
     right: 20px;
   }
+
+  @media (max-width: 991px) {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    right: -30px;
+    z-index: -9;
+    display: none;
+  }
 }
 
 .floating-ball-right {
@@ -352,6 +362,15 @@
   @media (max-width: 992px) {
     width: 100px;
     left: -20px;
+  }
+
+  @media (max-width: 991px) {
+    display: flex;
+  }
+
+  @media (max-width: 640px) {
+    display: none;
+    z-index: 1;
   }
 }
 
