@@ -211,6 +211,10 @@
   font-weight: 700;
   box-shadow: 0 0 6px currentColor;
 
+  @media (max-width: 991px) {
+    padding: 10px;
+  }
+
   .stat-illustration {
     width: 70%;
     height: auto;
