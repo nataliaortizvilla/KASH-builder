@@ -126,6 +126,11 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 32px;
+
+  @media (max-width: 640px) {
+    align-items: center;
+    justify-content: flex-start;
+  }
 }
 
 .section-heading {
@@ -146,15 +151,20 @@
 
 .step {
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  gap: 26px;
+  gap: 10px;
+
+  @media (max-width: 640px) {
+    flex-direction: row;
+  }
 }
 
 .step-number {
   color: var(--neutral-0);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 800;
   line-height: normal;
   min-width: 60px;
@@ -194,14 +204,20 @@
 
 .illustration {
   position: relative;
-  width: 490px;
-  height: 556px;
+  width: 100%;
+  max-width: 490px;
+  height: auto;
   flex-shrink: 0;
+  display: flex;
+
+  @media (max-width: 991px) {
+    display: none;
+  }
 
   .main-image {
-    width: 486px;
-    height: 556px;
-    position: absolute;
+    width: 100%;
+    height: auto;
+    position: relative;
     left: 0;
     top: 0;
   }
