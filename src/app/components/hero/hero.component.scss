@@ -109,9 +109,15 @@
   height: 104px;
   object-fit: contain;
 
+  @media (min-width: 992px) {
+    position: absolute;
+    left: 356px;
+  }
+
   @media (max-width: 991px) {
     width: 180px;
     height: auto;
+    position: relative;
   }
 
   @media (max-width: 768px) {
