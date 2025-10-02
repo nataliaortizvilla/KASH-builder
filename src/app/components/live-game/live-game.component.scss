@@ -216,11 +216,13 @@
   }
 
   .stat-illustration {
+    display: block;
     width: 70%;
     height: auto;
 
     @media (max-width: 991px) {
       width: 100%;
+      height: auto;
       align-self: stretch;
     }
   }
